@@ -1,0 +1,223 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=0.6in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,
+  filecolor=blue,
+  pdfborder={0 0 0},
+  pdftitle={Vaibhav Shaw Resume},
+  pdfauthor={Vaibhav Shaw}
+}
+
+\definecolor{rulecolor}{RGB}{90,90,90}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{black}}{}{0em}{}[\vspace{-2pt}{\color{rulecolor}\hrule height 0.6pt}]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+% No hyphenation: keep paragraphs free of hyphens at line ends
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=3000
+\emergencystretch=3em
+
+% Tight vertical spacing everywhere
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=0pt,parsep=0pt,partopsep=0pt,labelsep=0.4em}
+
+\newcommand{\entry}[2]{\noindent\textbf{#1}\hfill #2\par}
+\newcommand{\entrymeta}[1]{\noindent\textit{#1}\par}
+\newcommand{\subline}[1]{\noindent #1\par}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries Vaibhav Shaw}\\[2pt]
+  {\large B.Tech. Computer and Communication Engineering}\\[3pt]
+  \href{mailto:vaibhavshaw23@gmail.com}{vaibhavshaw23@gmail.com} \textbar{} +91-9667509357 \textbar{} \href{https://www.linkedin.com/in/vaibhav-shaw-885515256/}{LinkedIn} \textbar{} \href{https://github.com/Strikerman23}{GitHub}\\[2pt]
+  C-120, 4th Floor, Samriddhi Apartments, Street Number 6, Chhatarpur Enclave Phase II, New Delhi, India, 110074
+\end{center}
+
+\section*{Summary}
+\smallskip
+\entry{\textmd{Computer and Communication Engineering graduate from Amrita Vishwa Vidyapeetham with a strong interest in Machine Learning, Data Science, Artificial Intelligence, ADAS and Algorithm Analysis. Interned at IDEAS Technology Innovation Hub, Indian Statistical Institute Kolkata, where I built an LSTM based stock forecasting model that cut MSE by 87\% versus a CNN baseline, served through a Flask API with a web front end. Also built and deployed a camera based depth estimation and object detection pipeline on an NVIDIA Jetson Orin Nano, and published a 108,634 frame day/night dataset on Mendeley Data. Currently expanding my skills in Full Stack Development, Computer Vision, and applied AI, with a focus on building and deploying reliable, end to end software systems.}
+}
+
+\section*{Experience}
+\smallskip
+\entry{Space Science and Technology Intern}{11/2026 -- 12/2026}
+\entrymeta{\textbf{India Space Lab New Delhi}, Delhi, India, \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgDmTqzozUIdRp2VEYd5jlKCAd4J7faF_kbkOMwKNKGIhzg?e=AaQ6pn}{Link}}
+\begin{itemize}
+  \item Internship
+\end{itemize}
+
+\entry{Data Science Intern}{05/2025 -- 07/2025}
+\entrymeta{\textbf{IDEAS Technology Innovation Hub @ Indian Statistical Institute Kolkata}, West Bengal, India \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgAltXJOMi_BRp3m9-xDmrGzASn_fKkUzRaPmS4RXXiqqRw?e=tXpNNo}{Link}}
+\begin{itemize}
+  \item Internship
+\end{itemize}
+
+
+\section*{Projects}
+\smallskip
+\entry{Anti Collision System using Monocular Depth Estimation}{Apr 2025 -- May 2026 \\ \textbf{Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu, India} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgDdZxFmi9bIRLfppk8r4VRhAWm9g_mbB61_vDr_gSDBixU?e=m9Tljg}{Link}}
+\begin{itemize}
+  \item \textbf{Python, Anaconda IDE, Nvidia Jetson Orin Nano, Monocular Camera, ADAS, LLM (Large Language Models), Deep Learning, Artificial Intelligence}
+  \item This project developed a low cost, camera only anti collision system for Advanced Driver Assistance Systems (ADAS). It implemented and benchmarked two monocular depth estimation models as alternatives to costly LiDAR and stereo camera setups: Monodepth2, a self supervised CNN encoder decoder, and DPT-Hybrid, a transformer based architecture using attention. Both were trained and evaluated on the KITTI autonomous driving dataset with standard preprocessing (resizing, pixel normalization, augmentation) and further validated on a custom collected ``Campus Dataset''. The pipeline paired YOLOv8/YOLOv10 object detection with the depth models to produce real time, per object distance estimates, and was deployed end to end on an NVIDIA Jetson Orin Nano for embedded, hardware in the loop inference. Key challenges included the inherent ambiguity of recovering 3D depth from a single 2D image, training without labeled depth data via self supervised photometric loss, balancing accuracy against computational cost for real time deployment (Monodepth2 at ${\sim}$14.5--26M parameters vs.\ DPT-Hybrid at ${\sim}$123M), and maintaining robustness under night time glare and low visibility. Performance was measured against LiDAR ground truth using standard depth estimation metrics: Root Mean Squared Error (RMSE), Absolute Relative Error (AbsRel), and $\delta_1$ (accuracy). Across 154 test frames, DPT-Hybrid significantly outperformed Monodepth2 (RMSE 1.91 vs.\ 5.73; AbsRel 0.144 vs.\ 0.596; $\delta_1$ 0.837 vs.\ 0.450), though Monodepth2's smaller footprint proved more practical for embedded deployment. Real world testing achieved average distance detection accuracy of 86\% or higher with a static camera and 75\% or more when both object and camera were moving, with reliable detection ranges of 3--24\,m in daytime and 3--9\,m at night. This demonstrates that monocular depth estimation can serve as a viable, cost effective solution for real time collision avoidance in ADAS. To contextualize the cost advantage, the monocular approach cut hardware cost by roughly 96\%, about 1/27th the cost of the LiDAR sensor alone, or roughly 26--27$\times$ cheaper.
+\end{itemize}
+
+\entry{\\Stock Market Prediction Using Deep Learning}{May 2025 -- Jul 2025 \\ \textbf{Indian Statistical Institute, Kolkata, India} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgAltXJOMi_BRp3m9-xDmrGzASn_fKkUzRaPmS4RXXiqqRw?e=Q4AVrY}{Link}}
+\begin{itemize}
+  \item \textbf{Python, HTML, CSS, JavaScript, Accurate LSTM Forecasting}
+  \item This project develops a sophisticated deep learning model for accurate stock market prediction. Leveraging Long Short Term Memory (LSTM) networks, the model excels at capturing complex temporal dependencies and historical patterns within financial data. A key innovation is its focus on identifying universal market patterns across diverse datasets, enabling robust predictions for any new, unseen company. Our methodology involves rigorous data preprocessing like handling missing values and data normalization using MinMaxScaler class from scikit learn, comprehensive model training, and performance evaluation using metrics like Mean Squared Error and Mean Absolute Error. The LSTM model demonstrated superior accuracy and efficiency compared to alternative approaches such as CNN model based stock market prediction wherein the MSE improved from 0.0028 to 0.00036 (or 87\%) and MAE improved from 0.0299 to 0.0103 (or 66\%). It is designed to forecast 30 day stock prices. An intuitive HTML/CSS/JavaScript front end provides seamless user interaction for company selection and prediction visualization. The Flask API framework powers the back end, handling core logic, prediction services, and data management or alternatively Streamlit can also be used. This system provides an adaptable, and accessible tool for advanced financial analytics, offering immediate insights into market trends. Looking ahead, the framework is designed to evolve toward universal market generalization, enabling reliable forecasts for new, unseen companies beyond the currently trained sectors adapting to unique market dynamics through advanced cross market analysis.
+\end{itemize}
+
+\entry{\\Smart driving technology for ADAS}{Dec 2024 -- Apr 2025 \\ \textbf{Amrita Vishwa Vidyapeetham} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgDTCy14jO-GRIF_e-2SNNyxAfhWSTZ0lUH0QrvyHNwHoxk?e=DV6DKJ}{Link}}
+\begin{itemize}
+  \item \textbf{Python, Raspberry Pi 5, MATLAB, Deep Learning}
+  \item The project aims to develop a cost effective autonomous car system using Raspberry Pi with features like lane detection using Dijkstra's Algorithm and IR Sensors, obstacle detection using ultrasonic sensors, smart parking using V2X communication, ultrasonic sensor and raspicam, and traffic signal detection using machine learning model training and evaluation and YOLO, ensuring safer and more efficient driving. A key innovation is LoRa WAN V2X communication, an advanced feature enabling real time detection of traffic jams and accidents. While most features are in the execution phase and market tested, this LoRa WAN integration represents a pioneering step in the sense that while some features may already exist in the market, the unique implementation of these features simultaneously is what is it's novelty. The system aims to reduce accidents, assist inexperienced drivers, and improve traffic efficiency while remaining easily accessible.
+\end{itemize}
+
+\entry{\\Assessment of Machine Learning Classifiers for Heart Diseases Discovery}{Jul 2024 -- Nov 2024 \\ \textbf{Amrita Vishwa Vidyapeetham} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgCI91qNtnAPT7mLq81K27vKAUrOPdrY2VWKqFYyFy8KVDU?e=OVkYFj}{Link}}
+\begin{itemize}
+  \item \textbf{Python, Machine Learning}
+  \item Evaluated machine learning classifiers, including Decision Tree (DT), Random Forest (RF), and Support Vector Machine (SVM), for heart disease detection using the Cleveland Heart Disease dataset (303 observations). Implemented Principal Component Analysis (PCA) for dimensionality reduction and feature extraction, and benchmarked models across multiple performance metrics such as accuracy, precision, sensitivity, and F1 score and analyzed the confusion matrix. The PCA combined with Decision Tree (DT) classifier achieved the best overall performance, yielding an accuracy of 0.683, a precision of 0.609, a sensitivity of 0.583 (or 58.3\%), and an F1 score of 0.596 (or 59.6\%), outperforming both the Random Forest and SVM configurations.
+\end{itemize}
+
+\entry{\\QR Code Based Passport Verification System using Tiva C Microcontroller}{Jan 2024 -- Jun 2024 \\ \textbf{Amrita Vishwa Vidyapeetham} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgAGAbzfs1geS4s2m9ReVHakAdbkOfYj0wZ8nB8ZjsR14eM?e=p8PhZn}{Link}}
+\begin{itemize}
+  \item \textbf{C, C++, Energia IDE, Arduino IDE, Embedded Computing}
+  \item Developed a QR Code based Passport Verification System using Tiva C Microcontroller, ESP32 Wi-Fi and Bluetooth Module, Arduino Uno, Energia IDE and Arduino IDE that verifies the QR code on the passport against stored QR code data in an official database using string matching and searching algorithms like binary search to efficiently retrieve and validate passport records, helping identify fraudulent or unverified passports at an early stage.
+\end{itemize}
+
+\entry{\\Signal BOOSTER X: Expanding the Reach of Weak Signals}{Dec 2023 -- Mar 2024 \\ \textbf{Amrita Vishwa Vidyapeetham} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgD1WGNPHW6zSbjuiS8w77dTAajvoABR8zxhYoCiVDjsmGk?e=V1xXNx}{Link}}
+\begin{itemize}
+  \item \textbf{Python, Signal Processing}
+  \item Amidst the rapid evolution of wireless technology, signal dead zones remain a major challenge, especially indoors and in weak coverage areas. Signal Booster X is a low cost dual antenna cellular/Wi-Fi signal amplification system designed to capture, amplify, and rebroadcast weak signals. The input antenna captures the signal and directs it to the amplification stage, while the output antenna retransmits the amplified signal. The MediaTek MT7528 KN chipset manages wireless communication, data processing, and connectivity, while a Python based monitoring application provides real time signal strength and network speed measurements. The system uses a signal enhancement and interference suppression algorithm to coordinate signal acquisition, filtering, amplification, and stabilization. It applies gain where required while suppressing unwanted interference and unnecessary noise amplification, with basic spectrum management and error correction mechanisms for stable connectivity. Python based speed testing further showed that downlink speed increased from 15.541 Mbps to 17.817 Mbps, an improvement of 2.276 Mbps, while uplink speed increased from 1.266 Mbps to 30.095 Mbps, an improvement of 28.829 Mbps.
+\end{itemize}
+
+\entry{\\Ficomtoo: Lossless Text File Compression}{Dec 2023 -- Mar 2024 \\ \textbf{Amrita Vishwa Vidyapeetham} \textbf{\textbar{}} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgBmFxpcXPaTTId07us6JP2QAYW8-R7mIPh3ST37exEcrCg?e=aqxEXD}{Link}}
+\begin{itemize}
+  \item \textbf{Python, Huffman Coding Technique, Data Structures and Algorithms}
+  \item Ficomtoo is a Python based lossless text file compression and decompression system utilizing Huffman coding to achieve optimal data compression. The project implements core data processing features such as frequency analysis, binary Huffman tree construction, variable length code generation, and custom mapping tables to replace symbols with shorter binary codes. Performance testing successfully demonstrated the system's efficiency by reducing an input text file size from 1.76 KB (1,803 bytes) down to 1.27 KB (1,301 bytes) which is approximately 27 percent decrease.
+\end{itemize}
+
+\section*{Skills}
+\smallskip
+\textbf{Domain Knowledge:} RF System Design, Engineering Mathematics, Digital Design, Embedded Computing, Analog and Digital Communication Theory, Signal Processing, Advanced Algorithms, DSA, Advanced Computer Networks, Antenna System Theory and Design, Software Defined Radio, Circuit Theory, Machine Learning and Artificial Intelligence, Software Engineering, Physics of Electronic Materials.\\
+\smallskip
+\textbf{Areas of Interest:} Data Science, Artificial Intelligence, Machine Learning, Generative AI, Full Stack Development, Antennas, Advanced Driver Assistance (ADAS), Computer Vision, Algorithm Analysis, Data Structures\\
+\smallskip
+\textbf{Tools and Technologies:} ANSYS HFSS, AutoCAD, Keil IDE, VS Code, Anaconda IDE, Spyder IDE, Jupyter Notebook, ADALM-pluto SDR, Energia IDE, Arduino IDE, NVIDIA JetPack SDK, MIT App Inventor\\
+\textbf{Design and Simulation Tools:} NetSim, NetLogo, Proteus IDE, GNU Radio, Microsoft Power BI, Tableau, Digital Electronics Design, Wireshark\\
+\smallskip
+\textbf{Languages and Frameworks:} C, C++, Python, MATLAB, HTML, CSS, Java, JavaScript, SQL, Assembly Language, LaTeX
+
+
+\section*{Education}
+\smallskip
+\entry{Bachelor of Technology (B.Tech), Computer and Communication Engineering}{08/2026}
+\entrymeta{Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu, India}
+\subline{CGPA: 7.87}
+
+\smallskip
+\entry{Class XII (CBSE)}{07/2020}
+\entrymeta{Emmanuel Mission School, Kota, Rajasthan, India}
+\subline{Subjects: Physics, Chemistry, Mathematics, English, and Physical Education (PE)}
+\subline{GPA: 93.6\%}
+
+\smallskip
+\entry{Class X (CBSE)}{05/2018}
+\entrymeta{Springdales School, Dhaula Kuan, New Delhi, India}
+\subline{Subjects: English, Hindi, Mathematics, Science, Social Science}
+\subline{GPA: 94.8\%}
+
+\section*{Tests}
+\smallskip
+\entry{JEE Advanced 2022}{Aug 2022}
+\entrymeta{IIT Bombay \textbar{} Score: 80/360 \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgAVTxYoEshrTrDIc9E1rFCqAfk9Kt6E3Vl3VsHVvCxOc4I?e=dLQ0qr}{Link}}
+\begin{itemize}
+  \item Cleared JEE Advanced 2022 with a common rank list (CRL) of 23,745 amongst a total of 2.5 lakh candidates in general category who qualified the preliminary JEE Mains 2022. Ranked amongst top 2.6\% of students in India's toughest examination.
+\end{itemize}
+
+\smallskip
+\entry{JEE Main 2022}{Jul 2022}
+\entrymeta{NTA \textbar{} Percentile: 93.9243587 \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgDLUGim0sy9QoUVxZaXSfImAY0j8y80IJ85JhJYPGoOW4o?e=jkLNip}{Link}}
+\begin{itemize}
+  \item Achieved a common rank list (CRL) of 54,663 in General Category across 9 lakh candidates who appeared for the tests, thus ranking amongst 6\% candidates all over India
+\end{itemize}
+
+\smallskip
+\entry{AEEE 2022}{Jul 2022}
+\entrymeta{Amrita Vishwa Vidyapeetham \textbar{} Percentile: 96.438 \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgCzQrTZzWmTRryqfwHQmGz2AVFr8G-29qaYku7Ht0kSuJg?e=4xJ535}{Link}}
+\begin{itemize}
+  \item Achieved a common rank list (CRL) of 1503 amongst all candidates who took the test in general category in the year 2022.
+\end{itemize}
+
+\smallskip
+\entry{IELTS (Academic)}{July 2026}
+\entrymeta{Overall band score 8.0 \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgDyQ75SGl7HSIyLlvmubtSsAUlm7fsiRLEFKVxC7ImYc4Y?e=hWSOLE}{Link}}
+\begin{itemize}
+  \item Demonstrates fully operational command of academic English, including the ability to handle complex reasoning, detailed argumentation, and advanced professional or academic discourse.
+\end{itemize}
+
+\section*{Certifications}
+\begin{itemize}
+\smallskip
+  \item \textbf{ADG Verified in Defend} \textbar{} EC-Council \textbar{} Sep 2026
+  \item \textbf{Viksit Bharat Young Leaders Dialogue} \textbar{} Ministry of Youth Affairs and Sports, Government of India \textbar{} Aug 2026
+  \item \textbf{Simulink Onramp} \textbar{} MathWorks \textbar{} Mar 2025
+  \item \textbf{Introduction to Networking} \textbar{} Nvidia \textbar{} Feb 2025
+  \item \textbf{FreeRTOS Simplified: A beginner's Guide to Develop and Debug FreeRTOS Applications} \textbar{} Microchip University \textbar{} May 2024
+  \item \textbf{ARM Cortex-M Architecture Overview} \textbar{} Microchip University \textbar{} Apr 2024
+  \item \textbf{6.00.1x: Introduction to Computer Science and Programming Using Python} \textbar{} Massachusetts Institute of Technology \textbar{} Nov 2023
+  \item \textbf{MATLAB Onramp} \textbar{} MathWorks \textbar{} Sept 2023
+  \item \textbf{Introduction to C++} \textbar{} Coding Ninjas \textbar{} Sept 2023
+  \item \textbf{Learn Python Programming From A to Z: Beginner to Expert Course} \textbar{} Tutorials point \textbar{} Aug 2023
+\end{itemize}
+
+\section*{Languages}
+\smallskip
+\entry{English \textmd{[Native or Bilingual Proficiency]}, Hindi \textmd{[Native of Bilingual Proficiency]},\\
+Odiya \textmd{[Native or Bilingual Proficiency]}, Bengali \textmd{[Limited Working Proficiency]},\\
+French \textmd{[Fundamental Proficiency]}
+}
+
+
+\section*{Community Service \& Volunteer Work}
+\smallskip
+\entry{Sevanavaram: Tree Plantation}{Sep 2023}
+\entrymeta{Volunteer \textbar{} \href{https://1drv.ms/f/c/b8d0d879c4c6b5cb/IgAOYZNKIAizSYD87scMgtFdAf-NiU9XSlgY7pwDyL6M0cE?e=kuUSa8}{Link}}
+\begin{itemize}
+  \item The Sevanavaram program was held in connection with Amma's 70th Birthday Celebrations in September 2023. On this occasion multiple trees were planted inside the campus to light the flame of selflessness and compassion within the heart.
+\end{itemize}
+
+
+\section*{Extra Curricular Activities}
+\smallskip
+Table Tennis, Badminton, Football, Cricket, Singing, Playing Guitar
+
+\section*{Publications}
+
+\entry{CampusDepth-A-Large-Scale-Day-Night-RGB-Dataset-for-Monocular-Depth-Estimation}{May 2026}
+\entrymeta{Mendeley Data \textbar{} \href{https://data.mendeley.com/datasets/dg5zcsd952/1}{Link}}
+\begin{itemize}
+  \item Advanced Driver Assistance Systems (ADAS) require accurate and reliable perception of the surrounding environment to ensure vehicle safety and reduce the risk of collisions. Depth estimation plays a crucial role in understanding object distance and spatial relationships in traffic scenes. This dataset focuses on the preliminary data analysis required for the development of a low cost, camera based anti collision system using monocular depth estimation to address the limitations of conventional depth sensing methods.
+  \item The dataset includes 21 daytime recorded videos of daytime scenarios and 10 recorded videos of night time scenarios taken across different locations inside Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu. The videos have dataset markings spread across 3 m starting from 0 m to 30.
+  \item The videos are then sampled across various time instants leading to a total of 1,08,634 image frames combined across daytime and night time scenarios. The camera was setup and placed on a tripod to ensure smooth and stable video readings. The videos were recorded as .mp4 format and images as .jpeg format
+  \item The study emphasizes the importance of conducting a comprehensive statistical and performance analysis on large scale datasets collected across a finite spatial domain within the campus environment.
+\end{itemize}
+
+\end{document}
