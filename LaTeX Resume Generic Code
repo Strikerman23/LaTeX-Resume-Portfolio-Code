@@ -116,12 +116,17 @@
 
 \section*{Skills}
 \smallskip
-\textbf{Domain Knowledge:} RF System Design, Engineering Mathematics, Digital Design, Embedded Computing, Analog and Digital Communication Theory, Signal Processing, Advanced Algorithms, DSA, Advanced Computer Networks, Antenna System Theory and Design, Software Defined Radio, Circuit Theory, Machine Learning and Artificial Intelligence, Software Engineering, Physics of Electronic Materials.\\
+\textbf{Domain Knowledge:} RF System Design, Engineering Mathematics, Digital Design, Embedded Computing, Analog and Digital Communication Theory, Signal Processing, Advanced Algorithms, DSA, Advanced Computer Networks, Antenna System Theory and Design, Software Defined Radio, Circuit Theory, Machine Learning and Artificial Intelligence, Software Engineering, Physics of Electronic Materials.
+
 \smallskip
-\textbf{Areas of Interest:} Data Science, Artificial Intelligence, Machine Learning, Generative AI, Full Stack Development, Antennas, Advanced Driver Assistance (ADAS), Computer Vision, Algorithm Analysis, Data Structures\\
+\textbf{Areas of Interest:} Data Science, Artificial Intelligence, Machine Learning, Generative AI, Full Stack Development, Antennas, Advanced Driver Assistance (ADAS), Computer Vision, Algorithm Analysis, Data Structures
+
 \smallskip
-\textbf{Tools and Technologies:} ANSYS HFSS, AutoCAD, Keil IDE, VS Code, Anaconda IDE, Spyder IDE, Jupyter Notebook, ADALM-pluto SDR, Energia IDE, Arduino IDE, NVIDIA JetPack SDK, MIT App Inventor\\
-\textbf{Design and Simulation Tools:} NetSim, NetLogo, Proteus IDE, GNU Radio, Microsoft Power BI, Tableau, Digital Electronics Design, Wireshark\\
+\textbf{Tools and Technologies:} ANSYS HFSS, AutoCAD, Keil IDE, VS Code, Anaconda IDE, Spyder IDE, Jupyter Notebook, ADALM-pluto SDR, Energia IDE, Arduino IDE, NVIDIA JetPack SDK, MIT App Inventor
+
+\smallskip
+\textbf{Design and Simulation Tools:} NetSim, NetLogo, Proteus IDE, GNU Radio, Microsoft Power BI, Tableau, Digital Electronics Design, Wireshark
+
 \smallskip
 \textbf{Languages and Frameworks:} C, C++, Python, MATLAB, HTML, CSS, Java, JavaScript, SQL, Assembly Language, LaTeX
 
